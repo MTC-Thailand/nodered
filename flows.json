@@ -1,0 +1,79 @@
+[
+    {
+        "id": "7da3740115217542",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b65aeff0b21dde62",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "mtc.or.th",
+        "port": "3306",
+        "db": "testacc2_dbtable",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "0586ba8b9a80b34c",
+        "type": "mysql",
+        "z": "7da3740115217542",
+        "mydb": "b65aeff0b21dde62",
+        "name": "MTC",
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "3169ddad3fa5bc5d"
+            ]
+        ]
+    },
+    {
+        "id": "3169ddad3fa5bc5d",
+        "type": "debug",
+        "z": "7da3740115217542",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5f11fa3adab786b2",
+        "type": "inject",
+        "z": "7da3740115217542",
+        "name": "Member",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "select * from member where mem_id=1;",
+        "payload": "",
+        "payloadType": "str",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "0586ba8b9a80b34c"
+            ]
+        ]
+    }
+]
